@@ -1,5 +1,7 @@
 package it.uniroma3.siw.spring.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,8 +27,8 @@ public class Corso {
 	private String descrizione;
 
 	@ManyToMany
-	private Insegnante insegnante;
+	private List<Insegnante> insegnanti;
 	
-	@OneToMany
-	private Lezione lezione;
+	@OneToMany(mappedBy = "corso")
+	private List<Lezione> lezioni;
 }
