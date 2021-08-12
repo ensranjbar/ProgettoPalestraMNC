@@ -11,10 +11,6 @@ public interface PrenotazioneRepository extends CrudRepository<Prenotazione, Lon
 
 	public List<Prenotazione> findByLezione(Lezione lezione);
 	
-	
 	// ?????????
 
-//	public List<Prenotazione> findByNomeAndCognome(String nome, String cognome);
-
-//	public List<Prenotazione> findByNomeOrCognome(String nome, String cognome);
 }
