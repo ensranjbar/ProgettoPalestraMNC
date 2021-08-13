@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.spring.controller.validator.Le;
 import it.uniroma3.siw.spring.model.Lezione;
 import it.uniroma3.siw.spring.repository.LezioneRepository;
 
@@ -36,12 +37,16 @@ public class LezioneService {
 			return null;
 	}
 
-	/* @Transactional
+	public void deleteLezioneById(Long id) {
+			lezioneRepository.deleteById(id);
+	}
+
+	@Transactional
 	public boolean alreadyExists(Lezione lezione) {
-		List<Lezione> lezioni = this.lezioneRepository.findByNome(prodotto.getNome());
-		if (prodotti.size() > 0)
+		List<Lezione> lezioni = this.lezioneRepository.findByNome(lezione.get());
+		if (lezioni.size() > 0)
 			return true;
 		else 
 			return false;
-	} */ //?????
+	}
 }

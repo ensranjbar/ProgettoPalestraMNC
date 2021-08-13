@@ -61,9 +61,9 @@ public class LezioneController {
 	        return "lezioneForm";
 	    }
 	    
-	    @RequestMapping(value = "/deleteCuratore/{id}", method = RequestMethod.POST)
-	    public String deleteCuratore(@PathVariable("id") Long id) {
-	    	this.curatoreService.deleteCuratoreById(id);
-	    	return "curatori";
+	    @RequestMapping(value = "/deleteLezione/{id}", method = RequestMethod.POST)
+	    public String deleteLezione(@PathVariable("id") Long id) {
+	    	this.lezioneService.deleteLezioneById(id);
+	    	return "lezioni";
 	    }
 }
