@@ -41,7 +41,7 @@ public class Lezione {
 	@OneToOne
 	private Corso corso;
 	
-	@OneToOne
+	@ManyToOne
 	private Insegnante insegnante;
 	
 	@OneToOne
