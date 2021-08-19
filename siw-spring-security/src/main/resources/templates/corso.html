@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title=#{pageTitle.corso})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div>
+    	<h4 ></h4>
+    	
+    	<div  th:if="${corso}" th:object="${corso}">
+			<span th:text="*{nome}">qui-va-nome</span>
+			<span th:text="*{descrizione}">qui-va-descrizione</span>
+   		</div>
+    	<div th:unless="${corso}">Non esiste</div>
+    	<div th:if="${#authorization.expression('isAuthenticated()')}"> 
+     	<div>
+    		<form action="#" th:object="${corso}" th:action="@{/deleteCorso/{id}(id=${corso.id})}" th:method="post" >
+    		<input type="hidden" name="_method" value="delete">
+      		<button type="submit" id="submitButton">Cancella</button>
+    		</form>
+    	  </div>
+    	</div>
+    </div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

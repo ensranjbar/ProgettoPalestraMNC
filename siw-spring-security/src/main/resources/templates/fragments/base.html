@@ -3,11 +3,19 @@
 <head th:fragment="headerfiles(title)">
 	<meta charset="UTF-8" />
 	<link th:href="@{/css/my-style.css}" rel="stylesheet">
-	<title th:text="${title}"></title>
+	<title th:text="${title}">Palestra MNC</title>
 </head>
 <body>
 	<header th:fragment="intestazione">
-		<h1>Siw - Spring Very Simple Demo</h1>
+	<img class="" alt="logo" src="">
+			<nav>
+			<ul class="nav__links">
+				<li><a href="index" th:href="@{/index}">Home</a></li>
+				<li><a href="insegnanti" th:href="@{/insegnante}">Insegnanti</a></li>
+				<li><a href="Corsi" th:href="@{/corso}">Corsi</a></li>
+			</ul>
+		</nav>
+		<a class="cta" th:href="@{/contatti}"><button>Contatti</button></a>
 	</header>
 
 	<p>Go to the next page to see fragments in action</p>

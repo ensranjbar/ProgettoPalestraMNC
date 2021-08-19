@@ -11,6 +11,9 @@ import it.uniroma3.siw.spring.model.Lezione;
 public interface LezioneRepository extends CrudRepository<Lezione, Long> {
 
 	public List<Lezione> findByOrario(LocalTime orario);
+	
+	public List<Lezione> findByInsegnanteAndOrario(Insegnante insegnante,LocalTime orario);
+	
 
 	public List<Lezione> findByData(LocalTime data);
 	

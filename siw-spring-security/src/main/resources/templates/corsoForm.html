@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=#{header.corsi})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div >
+		<div >
+			<div>
+				<h4 >Inserisci i dati di un corso</h4>
+			</div>
+			<form th:action="@{/admin/corso}" method="POST" th:object="${corso}">
+				<div th:if="${#fields.hasGlobalErrors()}">
+					<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+				</div>
+				<div>
+					<div>
+						<span>Nome:</span> <span><input type="text"
+							th:field="*{nome}" /></span> <span
+							th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+					</div>
+					<div>
+						<span>Descrizione:</span> <span><input type="text"
+							th:field="*{descrizione}" /></span> <span
+							th:if="${#fields.hasErrors('descrizione')}"
+							th:errors="*{descrizione}"></span>
+					</div>
+					<div>
+						<span>Insegnante:</span> <span><input type="number"
+							th:field="*{insegnante.id}" /></span> <span th:if="${#fields.hasErrors('insegnante.id')}"
+							th:errors="*{insegnante.id}"></span>
+					</div>
+			
+					<!-- <form method="post" enctype="multipart/form-data" action="/uploadImage">
+						<input type="file" name="imagiFile">
+						<input type="submit" value="Upload"/>
+					</form> -->
+					
+					<div>
+						<span><button type="submit">Invio</button></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

@@ -49,7 +49,7 @@ public class InsegnanteService {
 
 	@Transactional
 	public boolean alreadyExists(Insegnante insegnante) {
-		List<Insegnante> insegnanti = this.insegnanteRepository.findByNomeAndCognome(insegnante.getNome(), insegnante. ());
+		List<Insegnante> insegnanti = this.insegnanteRepository.findByNomeAndCognome(insegnante.getNome(), insegnante.getCognome());
 		if (insegnanti.size() > 0)
 			return true;
 		else
