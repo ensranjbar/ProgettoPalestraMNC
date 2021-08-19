@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title=#{pageTitle.lezione})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div>
+    	<h4 th:text="#{header.lezione}">...</h4>
+    	
+    	<div th:if="${lezione}" th:object="${lezione}">
+			<span th:text="*{corso}">qui-va-coros</span>
+			<span th:text="*{insegnante}">qui-va-insegnante</span>
+			<span th:text="*{orario}">qui-va-orario</span>
+			<span th:text="*{data}">qui-va-data</span>
+			<span th:text="*{durata}">qui-va-durata</span>
+   		</div>
+    	<div th:unless="${lezione}">Non esiste</div>
+    </div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

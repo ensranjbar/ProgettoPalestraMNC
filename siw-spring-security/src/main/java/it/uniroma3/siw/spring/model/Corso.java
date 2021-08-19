@@ -31,4 +31,8 @@ public class Corso {
 	
 	@OneToMany
 	private List<Lezione> lezioni;
+
+	public String getNome() {
+		return this.nome;
+	}
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=#{title.formLezione})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+		<h4>Inserisci i dati di una lezione</h4>
+	</div>
+	<form th:action="@{/lezione}" method="POST" th:object="${lezione}">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>		
+		<div>
+			<div>
+				<span>Nome:</span>
+				<span><input type="text" th:field="*{nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+			</div>		
+			<div>
+				<span>Data:</span>
+				<span><input type="date" th:field="*{data}" /></span>
+				<span th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></span>
+			</div>
+			<div>
+				<span>Orario:</span>
+				<span><input type="time" th:field="*{orario}" /></span>
+				<span th:if="${#fields.hasErrors('orario')}" th:errors="*{orario}"></span>
+			</div>
+			<div>
+				<span>Durata:</span>
+				<span><input type="text" th:field="*{durata}" /></span>
+				<span th:if="${#fields.hasErrors('durata')}" th:errors="*{durata}"></span>
+			</div>
+			<div>
+				<span>Corso:</span>
+				<span><input type="date" th:field="*{corso}" /></span> ??
+				<span th:if="${#fields.hasErrors('corso')}" th:errors="*{corso}"></span>
+			</div>
+			<div>
+				<span><button type="submit">Invio</button></span>
+			</div>
+		</div>
+	</form>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

@@ -1,5 +1,4 @@
- 
-package it.uniroma3.siw.spring.model;
+ package it.uniroma3.siw.spring.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -46,5 +45,13 @@ public class Lezione {
 	
 	@OneToOne
 	private Prenotazione prenotazione;
+
+	public LocalTime getOrario() {
+		return this.orario;
+	}
+
+	public Insegnante getInsegnante() {
+		return this.insegnante;
+	}
 }
 

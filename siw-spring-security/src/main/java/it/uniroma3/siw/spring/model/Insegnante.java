@@ -34,5 +34,13 @@ public class Insegnante {
 	
 	@OneToMany(mappedBy = "insegnante")
 	private List<Lezione> lezioni;
+
+	public String getCognome() {
+		return this.cognome;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
 	
 }

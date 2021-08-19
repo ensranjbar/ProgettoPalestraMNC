@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=#{header.lezioni})"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+    	<h4 th:text="#{header.lezioni}">Lista delle lezioni</h4>
+		<ul>
+			<li th:each="lezione : ${lezioni}">
+				<a href="lezione.html" 
+				   th:href="@{'/lezione' + '/' + ${lezione.id}}" 
+				   th:text="|${lezione.corso} ${lezione.data}|">NomeCorso Data</a>
+			</li>
+		</ul>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>
