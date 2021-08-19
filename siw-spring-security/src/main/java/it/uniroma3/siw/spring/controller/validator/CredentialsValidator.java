@@ -6,7 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.spring.model.Credentials;
-import it.uniroma3.siw.spring.model.User;
+import it.uniroma3.siw.spring.model.Persona;
 import it.uniroma3.siw.spring.service.CredentialsService;
 
 /**
@@ -44,7 +44,7 @@ public class CredentialsValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return User.class.equals(clazz);
+        return Persona.class.equals(clazz);
     }
 
 }

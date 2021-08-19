@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "users") // cambiamo nome perchè in postgres user e' una parola riservata
-public class User {
+@Table
+public class Persona {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

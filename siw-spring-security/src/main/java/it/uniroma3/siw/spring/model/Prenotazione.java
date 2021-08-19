@@ -25,5 +25,5 @@ public class Prenotazione {
 	private Lezione lezione;
 	
 	@OneToOne 
-	private User user ;
+	private Persona user ;
 }

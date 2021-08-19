@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.spring.controller.validator.CredentialsValidator;
-import it.uniroma3.siw.spring.controller.validator.UserValidator;
+import it.uniroma3.siw.spring.controller.validator.PersonaValidator;
 import it.uniroma3.siw.spring.model.Credentials;
-import it.uniroma3.siw.spring.model.User;
+import it.uniroma3.siw.spring.model.Persona;
 import it.uniroma3.siw.spring.service.CredentialsService;
 
 @Controller
@@ -23,14 +23,14 @@ public class AuthenticationController {
 	private CredentialsService credentialsService;
 	
 	@Autowired
-	private UserValidator userValidator;
+	private PersonaValidator userValidator;
 	
 	@Autowired
 	private CredentialsValidator credentialsValidator;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET) 
 	public String showRegisterForm (Model model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new Persona());
 		model.addAttribute("credentials", new Credentials());
 		return "registerUser";
 	}
@@ -57,7 +57,7 @@ public class AuthenticationController {
     }
 	
     @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
-    public String registerUser(@ModelAttribute("user") User user,
+    public String registerUser(@ModelAttribute("user") Persona user,
                  BindingResult userBindingResult,
                  @ModelAttribute("credentials") Credentials credentials,
                  BindingResult credentialsBindingResult,

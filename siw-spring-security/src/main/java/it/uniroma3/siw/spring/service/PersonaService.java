@@ -5,8 +5,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import it.uniroma3.siw.spring.model.User;
-import it.uniroma3.siw.spring.repository.UserRepository;
+import it.uniroma3.siw.spring.model.Persona;
+import it.uniroma3.siw.spring.repository.PersonaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import java.util.Optional;
  * The UserService handles logic for Users.
  */
 @Service
-public class UserService {
+public class PersonaService {
 
     @Autowired
-    protected UserRepository userRepository;
+    protected PersonaRepository personaRepository;
 
     /**
      * This method retrieves a User from the DB based on its ID.
@@ -27,8 +27,8 @@ public class UserService {
      * @return the retrieved User, or null if no User with the passed ID could be found in the DB
      */
     @Transactional
-    public User getUser(Long id) {
-        Optional<User> result = this.userRepository.findById(id);
+    public Persona personaPerId(Long id) {
+        Optional<Persona> result = this.personaRepository.findById(id);
         return result.orElse(null);
     }
 
@@ -40,8 +40,8 @@ public class UserService {
      *                              as the passed User already exists in the DB
      */
     @Transactional
-    public User saveUser(User user) {
-        return this.userRepository.save(user);
+    public Persona inserisci(Persona user) {
+        return this.personaRepository.save(user);
     }
 
     /**
@@ -49,10 +49,10 @@ public class UserService {
      * @return a List with all the retrieved Users
      */
     @Transactional
-    public List<User> getAllUsers() {
-        List<User> result = new ArrayList<>();
-        Iterable<User> iterable = this.userRepository.findAll();
-        for(User user : iterable)
+    public List<Persona> getAllUsers() {
+        List<Persona> result = new ArrayList<>();
+        Iterable<Persona> iterable = this.personaRepository.findAll();
+        for(Persona user : iterable)
             result.add(user);
         return result;
     }

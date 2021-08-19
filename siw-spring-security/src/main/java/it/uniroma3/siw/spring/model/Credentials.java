@@ -28,7 +28,7 @@ public class Credentials {
 	private String role;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private User user;
+	private Persona user;
 
 	public Long getId() {
 		return id;
@@ -62,11 +62,11 @@ public class Credentials {
 		this.role = role;
 	}
 
-	public User getUser() {
+	public Persona getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Persona user) {
 		this.user = user;
 	}
 }
