@@ -29,7 +29,7 @@ public class Insegnante {
 	@Column(nullable = false)
 	private String email;
 	
-	@ManyToMany
+	@OneToMany(mappedBy="insegnante")
 	private List<Corso> corsi;  // !!
 	
 	@OneToMany(mappedBy = "insegnante")

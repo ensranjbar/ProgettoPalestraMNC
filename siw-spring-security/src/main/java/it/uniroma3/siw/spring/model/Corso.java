@@ -26,10 +26,10 @@ public class Corso {
 	@Column(nullable = false)
 	private String descrizione;
 
-	@ManyToMany
+	@OneToMany(mappedBy="corso")
 	private List<Insegnante> insegnanti;
 	
-	@OneToMany
+	@OneToMany(mappedBy="corso")
 	private List<Lezione> lezioni;
 
 	public String getNome() {
