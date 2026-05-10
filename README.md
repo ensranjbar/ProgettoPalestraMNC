@@ -8,35 +8,35 @@ L’applicazione è pensata per semplificare l’organizzazione delle lezioni e 
 👤 Funzionalità utente
 Gli utenti registrati possono:
 
-visualizzare le lezioni disponibili;
+- visualizzare le lezioni disponibili;
 
-prenotare un posto per una lezione;
+- prenotare un posto per una lezione;
 
-modificare le proprie prenotazioni;
+- modificare le proprie prenotazioni;
 
-cancellare una prenotazione già effettuata.
+- cancellare una prenotazione già effettuata.
 
 🛠️ Funzionalità amministratore
 L’amministratore può gestire la piattaforma attraverso funzionalità dedicate, tra cui:
 
-inserimento di nuove lezioni;
+- inserimento di nuove lezioni;
 
-modifica degli orari dei corsi;
+- modifica degli orari dei corsi;
 
-aggiornamento delle informazioni relative alle lezioni;
+- aggiornamento delle informazioni relative alle lezioni;
 
-gestione del numero massimo di partecipanti per ogni corso.
+- gestione del numero massimo di partecipanti per ogni corso.
 
 🔧 Tecnologie utilizzate
 Backend
-Il backend è stato sviluppato in Java utilizzando il framework Spring Boot.
+- Il backend è stato sviluppato in Java utilizzando il framework Spring Boot.
 
-Il progetto è strutturato con Maven.
+- Il progetto è strutturato con Maven.
 
 Frontend
 L’interfaccia utente è stata realizzata con:
-HTML
-CSS
+- HTML
+- CSS
 Database
 
 Per la gestione e la persistenza dei dati è stato utilizzato:
