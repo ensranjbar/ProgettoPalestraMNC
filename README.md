@@ -1,11 +1,32 @@
-🏋️‍♂️ Progetto Siw Palestra creato per il corso Sistemi informativi su Web, Università degli studi di Roma Tre.
+📌 Descrizione del progetto
+SIW Palestra è un’applicazione web sviluppata per il corso di Sistemi Informativi su Web presso l’Università degli Studi Roma Tre.
+Il progetto ha come obiettivo la realizzazione di una piattaforma dedicata alla gestione delle attività di una palestra.
+🎯 Obiettivo
+L’applicazione è pensata per semplificare l’organizzazione delle lezioni e delle prenotazioni, offrendo agli utenti iscritti un sistema semplice per consultare i corsi disponibili e riservare il proprio posto.
+👤 Funzionalità utente
+Gli utenti registrati possono:
+visualizzare le lezioni disponibili;
+prenotare un posto per una lezione;
+modificare le proprie prenotazioni;
+cancellare una prenotazione già effettuata.
 
-Sito web realizzato per una palestra con l'obiettivo di semplificare la gestione delle lezioni e delle prenotazioni da parte degli utenti. La piattaforma consente agli iscritti di:
+🛠️ Funzionalità amministratore
+L’amministratore può gestire la piattaforma attraverso funzionalità dedicate, tra cui:
+inserimento di nuove lezioni;
+modifica degli orari dei corsi;
+aggiornamento delle informazioni relative alle lezioni;
+gestione del numero massimo di partecipanti per ogni corso.
 
-Prenotare posti per le lezioni disponibili
-Gestire le proprie prenotazioni (modifica/cancellazione) Lato amministratore, il sito permette di:
-Inserire o modificare lezioni e orari
-Gestire il numero massimo di partecipanti per ogni corso
-🔧 Tecnologie utilizzate:
+🔧 Tecnologie utilizzate
+Backend
+Il backend è stato sviluppato in Java utilizzando il framework Spring Boot.
+Il progetto è strutturato con Maven.
+Frontend
+L’interfaccia utente è stata realizzata con:
+HTML
+CSS
+Database
 
-Backend: Java con Spring Boot (progetto strutturato con Maven) Frontend: HTML, CSS Database: Postgres
+Per la gestione e la persistenza dei dati è stato utilizzato:
+PostgreSQL
+
